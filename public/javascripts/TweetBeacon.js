@@ -68,7 +68,7 @@ TweetBeacon.prototype.addShockwave = function () {
     opacity: 1.0
   });
 
-  var radius = 20;
+  var radius = 4;
   var segments = 16 ;
 
   var circleGeometry = new THREE.CircleGeometry(radius, segments);        
@@ -126,7 +126,7 @@ TweetBeacon.prototype.show = function () {
   // Set the life span of the beacon before it shoots into space 
   setTimeout(function () {
     self.hide()
-  }, time * 1000);
+  }, time * 8000);
 };
 
 /**
