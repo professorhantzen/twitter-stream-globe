@@ -62,7 +62,7 @@
           <!-- Repeats for every Tweet in the $scope.tweets model -->
           <div ng-repeat="tweet in tweets" class="tweet-item {{tweet.sentiment.state}}">
             <img ng-src="{{tweet.user.profile_image_url}}" />
-            <span class="text"><a href="{{tweet.user.profile_image_url}}" target="_blank">@{{tweet.user.screen_name}}</a></span>
+            <span class="text"><a href="http://twitter.com/{{tweet.user.screen_name}}" target="_blank">@{{tweet.user.screen_name}} {{tweet.user.followers_count}}</a></span>
           </div>
 
         </div>
