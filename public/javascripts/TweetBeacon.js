@@ -69,7 +69,7 @@ TweetBeacon.prototype.addShockwave = function () {
   });
 
   var radius = 4;
-  var segments = 16 ;
+  var segments = 8 ;
 
   var circleGeometry = new THREE.CircleGeometry(radius, segments);        
   var circle = new THREE.Mesh(circleGeometry, material);
@@ -77,7 +77,7 @@ TweetBeacon.prototype.addShockwave = function () {
   circle.scale.x = circle.scale.y = circle.scale.x = 0.1;
   this.container.add(circle);
   
-  var time = 200;
+  var time = 1000;
 
   // Animates opacity of shockwave
   TweenLite.to(circle.material, time, {
@@ -102,7 +102,7 @@ TweetBeacon.prototype.addShockwave = function () {
 TweetBeacon.prototype.show = function () {
 
   var self = this;
-  var time = 10;
+  var time = 1;
 
   // Define the line height based on the sentiment score
   this.beamHeight = 400 + Math.abs(this.tweet.sentiment.score) * 100
@@ -126,7 +126,7 @@ TweetBeacon.prototype.show = function () {
   // Set the life span of the beacon before it shoots into space 
   setTimeout(function () {
     self.hide()
-  }, time * 1000);
+  }, time * 500);
 };
 
 /**
@@ -135,7 +135,7 @@ TweetBeacon.prototype.show = function () {
 TweetBeacon.prototype.hide = function () {
 
   var self = this;
-  var time = 10;
+  var time = 4;
 
   // Animate opacity
   TweenLite.to(this.lineMesh.material, time, {
