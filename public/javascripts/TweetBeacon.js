@@ -77,7 +77,7 @@ TweetBeacon.prototype.addShockwave = function () {
   circle.scale.x = circle.scale.y = circle.scale.x = 0.1;
   this.container.add(circle);
   
-  var time = 2;
+  var time = 20;
 
   // Animates opacity of shockwave
   TweenLite.to(circle.material, time, {
@@ -126,7 +126,7 @@ TweetBeacon.prototype.show = function () {
   // Set the life span of the beacon before it shoots into space 
   setTimeout(function () {
     self.hide()
-  }, time * 8000);
+  }, time * 1000);
 };
 
 /**
